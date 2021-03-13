@@ -1,6 +1,5 @@
 import unittest
-from g2gScraper import Scraper
-
+from goldscraper.scraper import Scraper
 
 class ScraperTest(unittest.TestCase):
     def test_print_update(self):

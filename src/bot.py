@@ -3,7 +3,7 @@ import os
 
 from discord.ext import commands
 from dotenv import load_dotenv
-from g2gScraper import Scraper
+from goldscraper.scraper import Scraper
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 

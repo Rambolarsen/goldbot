@@ -1,5 +1,5 @@
 from datetime import datetime
-from priceInfo import PriceInfo
+from goldscraper.priceInfo import PriceInfo
 
 class PriceInfoCollection():
     """description of class"""

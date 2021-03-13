@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-from priceInfo import PriceInfo
-from priceInfoCollection import PriceInfoCollection
+from goldscraper.priceInfo import PriceInfo
+from goldscraper.priceInfoCollection import PriceInfoCollection
 from datetime import datetime, timedelta
 
 class Scraper():
