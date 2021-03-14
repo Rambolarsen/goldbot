@@ -73,6 +73,6 @@ jobs:
           location: 'West Europe'
 
           # Name of the Container Group Instance
-          name: goldbot
+          name: gold-bot-ci
           # The OS type of the Containers. Accepted Values are  { Linux, Windows }                  
 
