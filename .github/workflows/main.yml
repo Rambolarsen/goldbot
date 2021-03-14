@@ -23,6 +23,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+        # Adds credentials
+      - 
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - 
         name: Checkout
@@ -46,4 +52,27 @@ jobs:
           context: .
           push: true
           tags: fromasjen/goldbot:latest
+          
+      # Deploys a docker container to a azure container instance
+      - 
+        name: Deploy to Azure Container Instances
+        uses: Azure/aci-deploy@v1
+        with:
+          # Name of the Resource Group in which the Container Instance will be created
+          resource-group: gold-bot-rg
+          # The command line to run when the container is started, e.g. "/bin/bash -c myscript.sh"
+          #command-line: # optional, default is 
+
+          # List of environment variables for the container. Space-seperated in "key=value" format
+          environment-variables: 'DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}'
+          # The DNS Name Label for Container with Public IP
+          dns-name-label: 'goldbot'
+          # Specify the fully qualified container image name. For example, "myregistry.azurecr.io/nginx:latest" or "python:3.7.2-alpine/"
+          image: 'fromasjen/goldbot'
+          # Location where the Container will be deployed
+          location: 'West Europe'
+
+          # Name of the Container Group Instance
+          name: goldbot
+          # The OS type of the Containers. Accepted Values are  { Linux, Windows }                  
 
