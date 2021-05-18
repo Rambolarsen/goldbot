@@ -11,7 +11,7 @@ BOT = commands.Bot(command_prefix='!')
 
 FIREMAWGOLDPRICES = Scraper('https://www.g2g.com/wow-classic-eu/gold-27815-27817?&platform=39842&sorting=lowest_price')
 
-@BOT.group(name='price', invoke_without_command=True, aliases=['p'])
+@BOT.group(name='price', invoke_without_command=True)
 async def price_cmd(ctx):
     for price in FIREMAWGOLDPRICES.get_gold_prices():
         await ctx.send(price)   
