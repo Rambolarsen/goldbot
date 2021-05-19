@@ -9,7 +9,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 BOT = commands.Bot(command_prefix='!')
 
-FIREMAWGOLDPRICES = Scraper('https://www.g2g.com/wow-classic-eu/gold-27815-27817?&platform=39842&sorting=lowest_price')
+FIREMAWGOLDPRICES = Scraper('https://www.g2g.com/wow-classic-tbc/gold-29076-29077?faction=41397&server=41013&sorting=lowest_price')
 
 @BOT.group(name='price', invoke_without_command=True)
 async def price_cmd(ctx):
